@@ -50,7 +50,7 @@ class ApplicationController < Sinatra::Base
       
   end
     binding.pry
-  delete '/articles/:id/delete' do
+  delete '/articles/:id' do
     
     @article = Article.find_by(id:params[:id])
     @article.destroy
