@@ -41,7 +41,7 @@ class ApplicationController < Sinatra::Base
     
     patch '/articles/:id' do
       new_params = {}
-      old_article = Article.find(params["id"])
+      old_article = Article.find_by(id:params["id"])
       new_params[:title] = params["title"]
       new_params[:content] = params["content"]
       old_article.update(new_params)
